@@ -20,11 +20,28 @@
 <center>
  <main class="container bg-light">   
 <nav class="navbar navbar-expand-lg bg-light">
-    <a class="nav-link btn btn-light btn-outline-danger" href="/proj">Home</a> 
-    <a class="nav-link btn btn-light btn-outline-danger" href="products.php">Products</a> 
-    <a class="nav-link btn btn-light btn-outline-danger" href="newProduct.php">Add new product</a> 
-    <a class="nav-link btn btn-light btn-outline-danger" href="login.php">Log In</a> 
-    <a class="nav-link btn btn-light btn-outline-danger" href="signup.php">Make new account</a> 
-    <a class="nav-link btn btn-light btn-outline-danger" href="logout.php">Log out</a> 
+    <a class="nav-link btn btn-light btn-outline-danger" href="/proj">Home </a>  &ensp;
+    <a class="nav-link btn btn-light btn-outline-danger" href="products.php">Products</a> &ensp;
+    <?php
+
+      if (isset($_SESSION['username'])) {
+        echo '<a class="nav-link btn btn-light btn-outline-danger" href="newProduct.php">Add new product</a> &ensp;';
+    }
+    ?>
+     
+
+    <?php
+    if (isset($_SESSION['username'])) {
+     echo '<a class="nav-link btn btn-danger btn-outline-danger" href="logout.php">Log out</a> &ensp;';
+    }
+    ?>
+    <?php
+    if (!isset($_SESSION['username'])) {
+
+    echo '<a class="nav-link btn btn-light btn-outline-danger" href="login.php" >Log In</a> &ensp;
+    <a class="nav-link btn btn-light btn-outline-success" href="signup.php">Make new account</a>' ;
+    }
+
+    ?>
 </nav>
 <br>

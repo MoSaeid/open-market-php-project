@@ -16,7 +16,7 @@
 				// fetch the resulting rows as an array
 				$user_pass = mysqli_fetch_all($result, MYSQLI_ASSOC);
 				if (!empty($user_pass)) {
-					if((($user_pass[0]['password_hashed'] == $_POST['password'])) and (($user_pass[0]['username'] == $_POST['username'])) ){
+					if((password_verify($_POST['password'], $user_pass[0]['password_hashed'])) and (($user_pass[0]['username'] == $_POST['username'])) ){
 					echo "you logged in"; //Successfully logged in
 					session_start();
 					$_SESSION["username"]=$user_pass[0]['username'];
