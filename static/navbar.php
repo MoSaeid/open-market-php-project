@@ -4,7 +4,7 @@
         session_start(); 
     } 
     if (isset($_SESSION['username'])) {
-        echo "you logged in  " . $_SESSION['username'];
+        echo "<h4> .  you logged in, Welcome "  . $_SESSION['username'] . " !</h4>";
     }
  ?>
 <!DOCTYPE html>
@@ -12,7 +12,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="static/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
     <title>Open Market</title>
 </head>

@@ -8,7 +8,7 @@
 		} else{ 
 			//fetch data from database
 				// sql query find specific user
-				$sql = "SELECT username, password_hashed FROM users WHERE username = '".$_POST['username'] . "'";
+				$sql = "SELECT id, username, password_hashed FROM users WHERE username = '".$_POST['username'] . "'";
 
 				// get the result set (set of rows)
 				$result = mysqli_query($conn, $sql);
@@ -20,6 +20,8 @@
 					echo "you logged in"; //Successfully logged in
 					session_start();
 					$_SESSION["username"]=$user_pass[0]['username'];
+					$_SESSION["uid"]=$user_pass[0]['id'];
+					header('location:index.php');
 
 
 				}else{
