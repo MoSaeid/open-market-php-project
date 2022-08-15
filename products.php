@@ -56,9 +56,11 @@ include('config/database_conn.php');
             { 
             session_start(); 
             }
-
-         if ($_SESSION['uid'] == $product['id']) {
-            echo '<input type="submit" name="delete" class="btn btn-danger" value="DELETE MY POST">';    
+            if (!empty($_SESSION['uid'])) {
+                if ($_SESSION['uid'] == $product['id']) {
+                    echo '<input type="submit" name="delete" class="btn btn-danger" value="DELETE MY POST">';       
+        }
+             
         } ?>
 
     </form>
