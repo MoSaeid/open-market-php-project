@@ -50,7 +50,7 @@
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
     <input type="text" class="form-control" id="exampleInputEmail1" name="username" placeholder="Enter your username" required>
-    <div id="emailHelp" class="form-text">Sign in with username that you given</div>
+    <div id="emailHelp" class="form-text">Username is case sensitive</div>
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
