@@ -37,19 +37,19 @@ include('config/database_conn.php');
 
 <?php foreach ($products as $product) { ?>
 <div class="card" style="width: 18rem;">
-  <img src="<?php echo $product['photo_url']; ?>" class="card-img-top" alt="photo">
+  <img src="<?php echo htmlspecialchars($product['photo_url']); ?>" class="card-img-top" alt="photo">
   <div class="card-body">
-    <h5 class="card-title"><?php echo $product['title']; ?></h5>
-    <p class="card-text"><?php echo $product['details'];?></p>
+    <h5 class="card-title"><?php echo htmlspecialchars($product['title']); ?></h5>
+    <p class="card-text"><?php echo htmlspecialchars($product['details']);?></p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Phone number : <?php echo $product['phone'];?></li>
-    <li class="list-group-item">Location : <?php echo $product['location'];?></li>
-    <li class="list-group-item">Posted at : <?php echo $product['created_at'];?></li>
+    <li class="list-group-item">Phone number : <?php echo htmlspecialchars($product['phone']);?></li>
+    <li class="list-group-item">Location : <?php echo htmlspecialchars($product['location']);?></li>
+    <li class="list-group-item">Posted at : <?php echo htmlspecialchars($product['created_at']);?></li>
   </ul> 
   <div class="card-body">
     <form action="products.php" method="POST">
-        <input type="hidden" name="post_id" value="<?php echo $product['product_id'];?>">
+        <input type="hidden" name="post_id" value="<?php echo htmlspecialchars($product['product_id']);?>">
         <?php
 
         if(!isset($_SESSION)) 
