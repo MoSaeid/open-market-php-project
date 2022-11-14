@@ -1,4 +1,4 @@
-# php_proj
+# Open Market is simple PHP project with mySQL database
 ## Download openmarket.sql and import it from PhpMyAdmin, or use SQL queries below to create the database.
 
 -- SQL queries table users in database openmarket
